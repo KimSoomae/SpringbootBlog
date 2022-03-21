@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>안녕하세요~</h1>
+    <!--Username은 HttpServletRequest#getRemoteUser()메서드를 통해 가져옴-->
+    <h1 th:inline="text">[[${#httpServletRequest.remoteUser}]]님!
+        로그인 성공하셨습니다. </h1>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+</body>
+</html>

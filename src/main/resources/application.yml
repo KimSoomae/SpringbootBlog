@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/userinfo?autoReconnect=true&useSSL=false
+    username: soomin
+    password: cheil2022
+    connection-test-query: SELECT NOW() FROM dual
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
